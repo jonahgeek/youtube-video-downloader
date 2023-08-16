@@ -8,7 +8,7 @@ def find_stream_by_resolution(streams, resolution):
             return stream
     return None
 
-def download_video(video_url, save_path='.', quality='720p'):
+def download_video(video_url, quality='720p'):
     try:
         yt = YouTube(video_url)
         
@@ -20,6 +20,14 @@ def download_video(video_url, save_path='.', quality='720p'):
         
         if video_stream:
             video_title = video_stream.title
+            
+            # Create a 'youtube' folder in the 'downloads' directory
+            downloads_folder = os.path.expanduser("~") + "/Downloads"
+            youtube_folder = os.path.join(downloads_folder, "youtube")
+            os.makedirs(youtube_folder, exist_ok=True)
+            
+            save_path = youtube_folder
+            
             print(f"Downloading: {video_title} in {quality}")
             
             downloaded_file_path = video_stream.download(output_path=save_path, filename_prefix="download_in_progress")
