@@ -1,0 +1,38 @@
+# Compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+env/
+*.venv/
+
+# Logs and temporary files
+*.log
+*.log.*
+*.tmp
+
+# User-specific files
+.DS_Store
+Thumbs.db
+
+# IDE-specific files and folders
+.idea/
+.vscode/
+
+# Compiled executables
+*.exe
+*.out
+*.dll
+
+# Compiled libraries
+*.so
+*.dylib
+
+# Miscellaneous
+*.egg-info/
+dist/
+build/
+__pycache__/
